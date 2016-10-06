@@ -1,7 +1,7 @@
 /*
 * Ejercicio 2
 * 
-* Muesta la clase que toca a primera hora según el día de la semana
+* Saluda según la hora que se introduzca en consola
 * 
 * @author Ismael Maldonado González
 */
