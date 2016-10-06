@@ -1,6 +1,8 @@
 /*
 * Ejercicio 1
 * 
+* Muesta la clase que toca a primera hora según el día de la semana
+* 
 * @author Ismael Maldonado González
 */
 
