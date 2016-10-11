@@ -76,7 +76,6 @@ public class Ejercicio10 {
       } else {
         System.out.println("Algo ha ido mal");
       }
-      
     } else {
       System.out.println("La fecha no es válida");
     }
