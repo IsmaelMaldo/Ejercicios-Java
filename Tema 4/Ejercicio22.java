@@ -1,7 +1,7 @@
 /*
 * Ejercicio 22
 *
-* Calcula la nota de un trimestre de la asignatura de programación
+* Calcula los minutos que faltan para el fin de semana
 * 
 * 
 * @author Ismael Maldonado González
