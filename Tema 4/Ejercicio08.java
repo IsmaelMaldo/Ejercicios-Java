@@ -1,7 +1,8 @@
 /*
 * Ejercicio 8
 *
-* Dada 3 notas calcula la nota media
+* Dada 3 notas calcula la nota media y te dice si es insufuciente, 
+* suficiente, bien, notable o sobresaliente
 * 
 * 
 * @author Ismael Maldonado González
