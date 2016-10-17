@@ -35,6 +35,9 @@ public class Ejercicio23 {
       case "superreducido":
         iva_val = 4;
         break;
+      default:
+        iva_val = 21;
+        System.out.println("Opción de IVA no válida, se aplicará el 21%% de Iva");
     }
     switch (promo.toLowerCase()) {
       case "nopromo":
@@ -49,6 +52,9 @@ public class Ejercicio23 {
       case "5porc":
         desc = base * 0.05;
         break;
+      default:
+        desc = 0;
+        System.out.println("Opción de Código Promocional no válida");
     }
     
     

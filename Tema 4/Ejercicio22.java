@@ -33,6 +33,8 @@ public class Ejercicio22 {
       case "viernes":
         dia_num = 4;
         break;
+      default:
+        System.out.println("Día no válido");
     }
     System.out.printf("Quedan %d minutos para el fin de semana. ¡Ánimo!\n", + (6660 - ((dia_num * 24 * 60) + (hora * 60) + minutos)));
   }

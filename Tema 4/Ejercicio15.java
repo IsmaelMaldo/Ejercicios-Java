@@ -35,6 +35,8 @@ public class Ejercicio15 {
         System.out.println("    " + caracter + caracter + caracter);
         System.out.println("     " + caracter);
         break;
+      default:
+        System.out.println("Opción no válida");
     }
   }
 }
