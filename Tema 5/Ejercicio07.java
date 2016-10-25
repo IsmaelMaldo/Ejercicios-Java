@@ -1,8 +1,7 @@
 /*
  * Ejercicio 7
  * 
- * Muestra los números del 320 al 160, contando de 20 en 20 utilizando un bucle 
- * do-while.
+ * Pide la contraseña para abrir la caja fuerte
  * 
  * @author Ismael Maldonado González
 */
