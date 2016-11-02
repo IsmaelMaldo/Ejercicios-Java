@@ -1,8 +1,7 @@
 /*
  * Ejercicio 30
  * 
- * Muestra todos los números positivos menores a uno dado y divisible
- * entre otro dado.
+ * Cuenta las horas que hay entre un día y una hora dada y otro
  * 
  * @author Ismael Maldonado González
 */
