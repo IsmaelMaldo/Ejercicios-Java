@@ -10,18 +10,24 @@ public class Ejercicio41 {
   public static void main(String[] args){
     System.out.printf("Introduce un número entero positivo: ");
     long num_usuario = Long.parseLong(System.console().readLine());
-    for (long i = num_usuario; i < (num_usuario + 5); i++) {
-      boolean primo = true;
-      for (long j = i - 1; j > 1; j--) {
-        if ((i % j) == 0) {
-          primo = false;
-        }
-      }
-      if (primo) {
-        System.out.println(i + " es primo.");
-      } else {
-        System.out.println(i + " no es primo.");
-      }
+    long conservar = num_usuario;
+    long divisor = 1;
+    long pares = 0;
+    long impares = 0;
+    while (num_usuario > divisor) {       //aveirguamos cuanto mide el primer número introducido
+      divisor = divisor * 10;
     }
+    divisor = divisor / 10;
+    while (num_usuario > 0)  {
+      long aux = num_usuario / divisor;
+      if ((aux % 2) == 0) {
+        pares++;
+      } else {
+        impares++;
+      }
+      num_usuario = num_usuario % divisor;
+      divisor = divisor / 10;
+    }
+    System.out.printf("El número %d contiene %d dígitos pares y %d dígitos impares", conservar, pares, impares);
   }
 }
