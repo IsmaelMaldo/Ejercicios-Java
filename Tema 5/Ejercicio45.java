@@ -1,17 +1,16 @@
 /*
- * Ejercicio 44
+ * Ejercicio 45
  * 
- * Intercala un número dado en otro número dado a partir de una
- * posición dada.
+ * Cambia un dígito por otro dado en una posición dada de un número dado
  * 
  * @author Ismael Maldonado González
 */
 
-public class Ejercicio44 {
+public class Ejercicio45 {
   public static void main(String[] args){
     System.out.printf("Introduce un número entero positivo: ");
     long num_usuario1 = Long.parseLong(System.console().readLine());
-    System.out.printf("Introduce la posición en la que quieres intercalar el dígito: ");
+    System.out.printf("Introduce la posición en la que quieres sustituir el dígito: ");
     long num_usuario2 = Long.parseLong(System.console().readLine());
     System.out.printf("Introduce el dígito a insertar: ");
     long numero_intercalar = Long.parseLong(System.console().readLine());
@@ -31,6 +30,8 @@ public class Ejercicio44 {
       divisor = divisor / 10;
     }
     numero = numero + numero_intercalar;
+    num_usuario1 = num_usuario1 % divisor;
+    divisor = divisor / 10;
     while (num_usuario1 > 0)  {
       long aux = num_usuario1 / divisor;
       numero = numero + aux;
