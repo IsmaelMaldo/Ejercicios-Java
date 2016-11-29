@@ -1,8 +1,7 @@
 /*
- * Ejercicio 17
+ * Ejercicio 18
  * 
- * Pinta una pecera a partir de un ancho y una altura dadas, y luego,
- * de forma aleatoria pinta un pez con el símbolo "&"
+ * Dibuja un pez en una pecera de tamaño dado
  * 
  * @author Ismael Maldonado González
 */
