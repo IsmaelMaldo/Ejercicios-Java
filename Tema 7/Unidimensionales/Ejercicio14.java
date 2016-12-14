@@ -1,5 +1,5 @@
 /*
- * Ejercicio 13
+ * Ejercicio 14
  *
  * Muestra un array relleno con números enteros aleatorios, depués se
  * pregunta si se quiere destacar el máximo o el mínimo, y se vuelve a

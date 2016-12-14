@@ -4,7 +4,7 @@
  * Muestra un array relleno con números enteros aleatorios, depués se
  * pregunta si se quiere destacar el máximo o el mínimo, y se vuelve a
  * mostrar el array con el valor correspondiente destacado entre 2
- * asteriscos
+ * asteriscos a cada lado
  *
  * @author Ismael Maldonado González
 */
