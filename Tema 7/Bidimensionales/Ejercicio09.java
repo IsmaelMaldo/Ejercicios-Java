@@ -1,7 +1,8 @@
 /*
  * Ejercicio 9
  * 
- * Pinta una matriz de 12 x 12 y rota los número una posición.
+ * Pinta una matriz de 12 x 12 y rota los número una posición en el
+ * sentido de las agujas del reloj.
  * 
  * @author Ismael Maldonado González
 */
