@@ -33,20 +33,20 @@ public class Ex22img3 {
     int espacios = 20;
     //Establecemos la dirección en función de la bandera (true =
     // izquierda y false = derecha)
-    boolean direción = false;
+    boolean direcion = false;
     for (int i = 0; i < contador; i++) {
       //Si el dígito es 0 no tenermos que cambiar de dirección la zigzag
       if (digitos[i] != 0) {
         //Cambiamos la dirección del zigzag
-        if (direción) {
-          direción = false;
+        if (direcion) {
+          direcion = false;
         } else {
-          direción = true;
+          direcion = true;
         }
       }
       //Imprimimos el zigzag
       for (int j = 0; j < digitos[i]; j++) {
-        if (direción) {
+        if (direcion) {
           espacios++;
         } else {
           espacios--;
