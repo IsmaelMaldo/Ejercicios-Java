@@ -15,6 +15,12 @@ public class Ejercicio18 {
     System.out.println(decABin(numero));
   }
 
+  /*
+   * Convierte un número decimal a binario
+   *
+   * @param long Número entero positivo
+   * @return long Número binario equivalente al decimal
+  */
   public static long decABin (long decimal) {
     String binario = "";
     while (decimal > 0) {

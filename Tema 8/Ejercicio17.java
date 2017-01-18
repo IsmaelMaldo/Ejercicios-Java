@@ -15,6 +15,12 @@ public class Ejercicio17 {
     System.out.println(binADec(binario));
   }
 
+  /*
+   * Convierte un número binario a decimal
+   *
+   * @param long Número binario
+   * @return long Número entero decimal equivalente al binario introducido
+  */
   public static long binADec (long binario) {
     int contador = 0;
     for (int i = 1; i < binario; i = i * 10) {
