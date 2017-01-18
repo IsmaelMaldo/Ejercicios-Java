@@ -7,11 +7,10 @@
 */
 
 import matematicas.Varias;
-import java.io.*;
 
 public class Ejercicio18 {
   public static void main(String[] args) {
-    System.out.println("Introduce un número en binario:");
+    System.out.println("Introduce un número en decimal:");
     long numero = Long.parseLong(System.console().readLine());
     System.out.println(decABin(numero));
   }
