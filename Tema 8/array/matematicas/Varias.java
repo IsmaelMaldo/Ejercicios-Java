@@ -14,14 +14,14 @@ public class Varias {
    * @return <code>false</code> si el NO número es capicúo
   */
   public static boolean esCapicua(long x){
-    long aux = x;
+    long num_usuario = x;
+    long aux = num_usuario;
     String comprobador = "";
     while (aux > 0) {
-      comprobador = comprobador + (aux % 10);
+       comprobador = comprobador + (aux % 10);
       aux = aux / 10;
     }
-    String comprobador2 = "" + x;
-    if (comprobador.equals(comprobador2)) {
+    if (Long.parseLong(comprobador) == num_usuario) {
       return true;
     } else {
       return false;
