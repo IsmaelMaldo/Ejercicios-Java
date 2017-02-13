@@ -1,21 +1,32 @@
 public class Gato {
-  private String raza;
   private String nombre;
+  private String color;
+  private String sexo;
 
-  public void setRaza(String raza){
-    this.raza = raza;
+  public Gato(String nombre, String color, String sexo) {
+    this.nombre = nombre;
+    this.color = color;
+    this.sexo = sexo;
   }
 
   public void setNombre(String nombre){
     this.nombre = nombre;
   }
 
-  public String getRaza() {
-    return this.raza;
+  public void setColor(String color){
+    this.color = color;
   }
 
+  public void setSexo(String sexo){
+    this.sexo = sexo;
+  }
+  
   public String getNombre() {
     return this.nombre;
+  }
+  
+  public String getColor() {
+    return this.color;
   }
 
   public void maulla() {
@@ -28,7 +39,7 @@ public class Gato {
 
   @Override
   public String toString() {
-    return "Nombre: " + this.nombre + "\nRaza: " + this.raza + "\n";
+    return "Nombre: " + this.nombre + "\nColor: " + this.color + "\nSexo: " + this.sexo + "\n";
   }
 
 }
