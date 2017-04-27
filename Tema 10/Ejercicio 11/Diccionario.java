@@ -1,9 +1,12 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public class Diccionario {
   public static void main(String[] args) {
     HashMap<String, String> diccionario = new HashMap<String, String>();
-
+    String[] palabras = new String[20];
+    int i = 0;
+    int aciertos = 0;
     diccionario.put("barco", "boat");
     diccionario.put("ordenador", "computer");
     diccionario.put("silla", "chair");
@@ -25,9 +28,23 @@ public class Diccionario {
     diccionario.put("juego", "game");
     diccionario.put("torre", "tower");
 
-    System.out.println("Introduzca una palabras en\nespañol separadas por intro para obtener su traducción");
-    while (true){
-      System.out.println(diccionario.get(System.console().readLine()));
+    for(Map.Entry palabra : diccionario.entrySet()){
+      palabras[i] = palabra.getKey() + "";
+      i++;
     }
+
+    for (i = 0; i < 5; i++){
+      int alea = (int)(Math.random() * 20);
+      System.out.println("Introduce la traducción de " + palabras[alea] + " en inglés");
+      String palabraUsuario = System.console().readLine();
+      if (diccionario.get(palabras[alea]).equals(palabraUsuario)){
+        aciertos++;
+        System.out.println("¡Correcto! :D");
+      } else {
+        System.out.println("Fallaste :'(");
+      }
+    }
+    System.out.println("Respuestas correctas: " + aciertos);
+    System.out.println("Respuestas incorrectas: " + (5 - aciertos));
   }
 }
