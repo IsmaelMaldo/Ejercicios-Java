@@ -8,7 +8,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Ejercicio04 {
+public class quita_comentarios {
   public static void main(String[] args) {
     File fichero = new File(args[0]);
     if (fichero.exists()){
@@ -18,7 +18,7 @@ public class Ejercicio04 {
         //Creamos el array list donde guardaremos cada una de las lineas
         ArrayList<String> textoArchivo = new ArrayList<String>();
         //Creamo el archivo nuevo donde meteremos el archivo dado ordenado
-        String archivoNuevo = args[0].replace(".txt", "_sort.txt");
+        String archivoNuevo = args[1];
         File nf = new File(archivoNuevo);
         nf.createNewFile();
         //Metemos en el ArrayList las diferentes líneas del archivo
@@ -27,14 +27,25 @@ public class Ejercicio04 {
           textoArchivo.add(linea);
           linea = br.readLine();
         }
-        //Ordenamos el ArrayList
-        Collections.sort(textoArchivo);
-        //Metemos el ArrayList ordenado en el archivo
+        //Metemos el ArrayList el archivo
         BufferedWriter bw = new BufferedWriter(new FileWriter(archivoNuevo));
+        boolean comentario = false;
         for (String lineaNueva : textoArchivo){
-          if (!(lineaNueva.equals(""))){
-            System.out.printf(lineaNueva + "\n");
-            bw.write(lineaNueva + "\n");
+          //Comprobamos que no estemos escaneando un comentario de varias líneas
+          if (lineaNueva.indexOf("/*")!= -1){
+            comentario = true;
+          }
+          if (lineaNueva.indexOf("*/") != -1){
+            comentario = false;
+          }
+          if (!comentario){
+            //Quitamos los comentarios de doble barra
+            lineaNueva = lineaNueva.replaceAll(" *//.*", "");
+            //No metemos en el nuevo archivo las líneas sin contenido
+            if (!(lineaNueva.equals("")) && (lineaNueva.indexOf("*/") == -1)){
+              System.out.printf(lineaNueva + "\n");
+              bw.write(lineaNueva + "\n");
+            }
           }
         }
         bw.close();
