@@ -9,6 +9,9 @@ import java.util.ArrayList;
 
 public class Analizador {
   public static void main(String[] args){
+    //Creamos el ArrayList donde vamos a meter las palabras del diccionario a posteriori
+    ArrayList<String> diccionario = new ArrayList<String>();
+    //Creamos el fichero con los caracteres aleatorios
     try {
       BufferedWriter bw = new BufferedWriter(new FileWriter("popurri.txt"));
       for (int i = 0; i < ((int)(Math.random() * (10 * 10) + 20)); i++){
@@ -20,6 +23,42 @@ public class Analizador {
       }
       bw.close();
     } catch (IOException e){
+      System.out.println(e);
+    }
+    //Metemos en el ArrayList todo el diccionario
+    try{
+      BufferedReader br = new BufferedReader(new FileReader("diccionario.txt"));
+      String linea = "";
+      while (linea != null){
+        if (!(linea.equals(""))){
+          diccionario.add(linea);
+        }
+        linea = br.readLine();
+      }
+    } catch (IOException e) {
+      System.out.println(e);
+    }
+    //Leemos el fichero con caracteres aleatorios, identificamos las palabras
+    //existentes, las sobresaltamos y las escribimos en el nuevo fichero
+    try {
+      BufferedReader br = new BufferedReader(new FileReader("popurri.txt"));
+      BufferedWriter bw = new BufferedWriter(new FileWriter("aclarado.html"));
+      String linea = "";
+      String lineaFiltrada = "";
+      while (linea != null){
+        if (!(linea.equals(""))){
+          lineaFiltrada = linea;
+          for (String palabra : diccionario){
+            lineaFiltrada = lineaFiltrada.replace(palabra, "<<<<<" + palabra + ">>>>>");
+          }
+          lineaFiltrada = lineaFiltrada.replace("<<<<<", "<a style=\"color: red\">");
+          lineaFiltrada = lineaFiltrada.replace(">>>>>", "</a>");
+          bw.write(lineaFiltrada + "\n");
+        }
+        linea = br.readLine();
+      }
+      bw.close();
+    } catch (IOException e) {
       System.out.println(e);
     }
   }
