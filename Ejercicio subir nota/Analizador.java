@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class Analizador {
   public static void main(String[] args){
@@ -13,10 +14,18 @@ public class Analizador {
     ArrayList<String> diccionario = new ArrayList<String>();
     //Creamos el fichero con los caracteres aleatorios
     try {
+      System.out.println("Escuchando al espíritu...");
+      try{
+        TimeUnit.SECONDS.sleep(5);
+      } catch (InterruptedException e){
+        System.out.println(e);
+      }
       BufferedWriter bw = new BufferedWriter(new FileWriter("popurri.txt"));
-      for (int i = 0; i < ((int)(Math.random() * (10 * 10) + 20)); i++){
+      int numeroFilas = (int)(Math.random() * (10 * 10) + 20);
+      int numeroLetras = (int)(Math.random() * 900 + 20);
+      for (int i = 0; i < numeroFilas; i++){
         String linea = "";
-        for (int j = 0; j < ((int)(Math.random() * 900 + 20)); j++){
+        for (int j = 0; j < numeroLetras; j++){
           linea = linea + generaCaracter();
         }
         bw.write(linea + "\n");
@@ -27,6 +36,12 @@ public class Analizador {
     }
     //Metemos en el ArrayList todo el diccionario
     try{
+      System.out.println("Leyendo diccionario...");
+      try{
+        TimeUnit.SECONDS.sleep(5);
+      } catch (InterruptedException e){
+        System.out.println(e);
+      }
       BufferedReader br = new BufferedReader(new FileReader("diccionario.txt"));
       String linea = "";
       while (linea != null){
@@ -41,6 +56,7 @@ public class Analizador {
     //Leemos el fichero con caracteres aleatorios, identificamos las palabras
     //existentes, las sobresaltamos y las escribimos en el nuevo fichero
     try {
+      System.out.println("Buscando palabras del espíritu...");
       BufferedReader br = new BufferedReader(new FileReader("popurri.txt"));
       BufferedWriter bw = new BufferedWriter(new FileWriter("aclarado.html"));
       String linea = "";
@@ -61,8 +77,20 @@ public class Analizador {
     } catch (IOException e) {
       System.out.println(e);
     }
+    //Buscar para abrir navegador con archivo
+    System.out.println("Abriendo el navegador");
+    try {
+      Process p = Runtime.getRuntime().exec(new String[]{"bash", "-c", "firefox ./aclarado.html"});
+    } catch (IOException e){
+      System.out.println(e);
+      }
   }
 
+  /*
+   * Funcion encargada de dar un caracter conforme a la frecuencia de
+   * los diferentes caracteres en español
+   * 
+  */
   public static String generaCaracter(){
     int numero = (int)(Math.random() * 10045 + 1);
     if (numero <= 1253){
